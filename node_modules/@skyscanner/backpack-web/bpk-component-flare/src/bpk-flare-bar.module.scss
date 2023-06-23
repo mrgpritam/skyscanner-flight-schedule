@@ -1,0 +1,75 @@
+/*
+ * Backpack - Skyscanner's Design System
+ *
+ * Copyright 2016 Skyscanner Ltd
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *   http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+@import '~bpk-mixins/index.scss';
+
+$bpk-spacing-v2: true;
+
+.bpk-flare-bar {
+  &__container {
+    position: relative;
+
+    // when we use `margin: X%`, the percentage is proportional to the size of the nearest block container's width
+    // https://developer.mozilla.org/en-US/docs/Web/CSS/margin
+    // By using `display: flex` we ensure that this container is the nearest block container
+    display: flex;
+    min-width: 10rem;
+    height: $bpk-flare-height-desktop;
+    overflow: hidden;
+
+    @include bpk-breakpoint-mobile {
+      height: $bpk-flare-height-mobile;
+    }
+  }
+
+  &__curve {
+    position: absolute;
+    // stylelint-disable-next-line unit-disallowed-list
+    bottom: -1px;
+    width: 700rem; // required for correct behaviour in IE
+    height: $bpk-flare-height-desktop;
+    margin-left: 50%;
+    transform: translateX(-50%);
+    fill: $bpk-surface-default-day;
+
+    @include bpk-rtl {
+      margin-right: 50%;
+      transform: translateX(50%);
+    }
+
+    @include bpk-breakpoint-mobile {
+      height: $bpk-flare-height-mobile;
+    }
+  }
+
+  &__rounded-corner {
+    position: absolute;
+    // stylelint-disable-next-line unit-disallowed-list
+    bottom: calc(#{bpk-spacing-lg()} - 1px);
+    left: 0;
+    width: $bpk-flare-corner-radius;
+    height: $bpk-flare-corner-radius;
+    fill: $bpk-surface-default-day;
+
+    &--trailing {
+      right: 0;
+      left: auto;
+      transform: rotate(-90deg);
+    }
+  }
+}

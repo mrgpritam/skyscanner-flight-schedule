@@ -1,0 +1,27 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`withDefaultProps should merge classNames 1`] = `
+<DocumentFragment>
+  <div
+    a="1"
+    b="2"
+    c="[object Object]"
+    class="a b"
+  >
+    Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+  </div>
+</DocumentFragment>
+`;
+
+exports[`withDefaultProps should render correctly 1`] = `
+<DocumentFragment>
+  <div
+    a="1"
+    b="2"
+    c="[object Object]"
+    class=""
+  >
+    Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+  </div>
+</DocumentFragment>
+`;

@@ -1,0 +1,20 @@
+{
+  "prices": [
+    {
+      "month": "Jan",
+      "price": 305
+    },
+    {
+      "month": "Feb",
+      "price": 348
+    },
+    {
+      "month": "Mar",
+      "price": 418
+    },
+    {
+      "month": "Apr",
+      "price": 448
+    }
+  ]
+}
